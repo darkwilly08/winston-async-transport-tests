@@ -11,3 +11,18 @@ Extending from `winston-transport` class only works if the buffer is less than t
 Extending from `stream.Writable` class and using the same options works as expected even with a callback called inside the `setImmediate` function.
 Extending from `stream.Writable` class and using the same options but as a transport for winston logger, the last chunk is missing. The difference with the first scenario
 is that I do can call the callback inside the `setImmediate` function but the last chunk is missing.
+
+## Install 
+
+```bash
+nvm use v18
+npm ci
+``` 
+
+## Run scenarios
+
+```bash
+npm run start:working
+npm run start:not-working
+npm run start:missing-logs
+```
